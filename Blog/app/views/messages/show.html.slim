@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @message.title
+p
+  strong Content:
+  = @message.content
+p
+  strong User:
+  = @message.user.name
+p
+  strong Visible:
+  = @message.visible
+
+p
+  strong Comments:
+  table 
+	- @message.comments.order(:created_at).page(params[:page]).per(2).each do |comment|
+		tr
+			td: b = comment.user.name
+			td = comment.content
+
+	= paginate @comments
+    
+
+
+=> link_to 'Edit', edit_message_path(@message)
+'|
+=< link_to 'Back', messages_path
