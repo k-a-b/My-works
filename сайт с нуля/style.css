@@ -1,0 +1,208 @@
+body {
+    background-color: #f8f8f8
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.header {
+    background: url(pages/img/background.jpg);
+    height: 170px;
+    position: relative;
+}
+
+.header div {
+    margin-top: 20px;
+    margin-left: 20px;
+    float: left;
+}
+
+.header ul {
+    background-color: antiquewhite;
+    font-size: 20px;
+    position: absolute;
+    right: 5px;
+    top: 42%;
+}
+
+.header li {
+    display: inline;
+    margin: 15px;
+    clear: both;
+}
+
+.footer {
+    background-color: darkgray;
+    width: 100%;
+    height: 25px;
+    text-align: right;
+    clear: both;
+}
+
+.footer h6 {
+
+    padding-right: 20px;
+    padding-top: 5px;
+}
+
+.krat_opis {
+    overflow: hidden;
+    padding-left: 10px;
+
+}
+
+.krat_har {
+    clear: both;
+    padding-top: 1px;
+}
+
+.center input {
+    display: block;
+    clear: both;
+    height: 35px;
+    width: 100px;
+    font-size: 23px;
+}
+
+.center input:hover {
+    border-color: crimson;
+    font-family: fantasy;
+}
+
+.center input:active {
+    background-color: forestgreen;
+}
+
+.a {
+    color: green;
+    font-style: italic
+}
+
+.center li {
+    list-style-type: none
+}
+
+.tov {
+    background-color: #eaeaea;
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.krat {
+    color: #707070;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px
+}
+
+.poln {
+    color: #484343;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+}
+
+#bolt {
+    background-color: dimgrey;
+    color: deepskyblue;
+    font-family: monospace;
+    list-style-image: url(pages/img/Bolt_mark.png)
+}
+
+#gayka {
+    color: yellowgreen;
+    font-style: italic;
+    list-style-image: url(pages/img/gayka_mark.png)
+}
+
+#sha {
+    background-color: darkblue;
+    color: greenyellow;
+    font-size: 16px;
+    text-align: center;
+    list-style-image: url(pages/img/sha_mark.png)
+}
+
+.place {
+    height: 25px;
+    width: 231px;
+    color: blue;
+    font-style: italic;
+    font-family: verdana;
+    background-color: ghostwhite;
+    text-transform: capitalize
+}
+
+#area {
+    color: blue;
+    font-style: italic;
+    font-family: verdana;
+    background-color: ghostwhite
+}
+
+.pic {
+    border-width: 5px;
+    border-color: orangered;
+    border-style: solid;
+    float: left;
+}
+
+.pic:hover {
+    border-color: transparent;
+}
+
+a:hover {
+    color: chartreuse;
+}
+
+input:nth-child(4):focus {
+    background-color: blueviolet;
+    font-family: arial;
+    color: azure;
+}
+
+table {
+    border: 2px solid blue;
+    border-collapse: collapse
+}
+
+td {
+    color: #484343;
+    font-style: italic;
+    text-align: center;
+    border: 1px solid blue;
+    border-collapse: collapse
+}
+
+.first {
+    text-align: left;
+}
+
+td:not([class="first"]) {
+    width: 55px;
+    height: 25px;
+}
+
+tr:first-child {
+    height: 125px;
+}
+
+.center p:first-letter {
+    font-size: 35px;
+    font-family: arial black;
+}
+
+.katalog p {
+    float: left;
+    margin-left: 10px;
+}
+
+.map {
+    width: 100%;
+    height: 374px;
+}

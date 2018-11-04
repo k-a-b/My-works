@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты. Интернет магазин "Болт и Гайка" </title>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div> <img src="img/logo2.png" alt="logo" width="150" height="150"></div>
+            <div>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="katalog.html"> Каталог</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <hr/>
+
+        <h4>Напишите нам!</h4>
+        <form>
+            <input type="text" placeholder="Ваше Имя" class="place"><br><br>
+            <input type="text" placeholder="Ваш e-mail" class="place"><br><br>
+            <input type="text" placeholder="Тема" class="place"><br><br>
+            <textarea cols="50" rows="3" placeholder="Введите ваш текст" id="area"></textarea><br>
+            <input type="file"><br><br>
+            <input type="submit" value="Отправить">
+        </form>
+        <h4>Наши контакты</h4>
+        <ul>
+            <li>Телефон: +7 (812) 316-55-89 Могоканальный</li>
+            <li>Адрес: Санкт-Петербург, Лиговский пр-т 64</li>
+            <Li>e-mail: <a href="mailto: sales@gb.com">Отдел продаж</a>, <a href="mailto: info@gb.com">Общая почта </a></Li>
+        </ul>
+        <br>
+        <div class="map">
+            <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+            <div style='overflow:hidden;height:374px;width:100%;'>
+                <div id='gmap_canvas' style='height:374px;width:100%;'></div>
+                <div><small><a href="embedgooglemaps.com/ru">https://embedgooglemaps.com/ru/</a></small></div>
+                <div><small><a href="https://mrpromokod.ru/sportmaster/">https://mrpromokod.ru/sportmaster/</a></small></div>
+                <style>
+                    #gmap_canvas img {
+                        max-width: none !important;
+                        background: none !important
+                    }
+                </style>
+            </div>
+            <script type='text/javascript'>
+                function init_map() {
+                    var myOptions = {
+                        zoom: 13,
+                        center: new google.maps.LatLng(59.922907, 30.356412999999975),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                    marker = new google.maps.Marker({
+                        map: map,
+                        position: new google.maps.LatLng(59.922907, 30.356412999999975)
+                    });
+                    infowindow = new google.maps.InfoWindow({
+                        content: '<strong>Болт и Гайка</strong><br>Санкт - Петербург,Россия, Лиговский пр-т 64<br>'
+                    });
+                    google.maps.event.addListener(marker, 'click', function() {
+                        infowindow.open(map, marker);
+                    });
+                    infowindow.open(map, marker);
+                }
+                google.maps.event.addDomListener(window, 'load', init_map);
+            </script>
+        </div>
+        <hr/>
+
+        <div class="footer">
+            <h6> &copy; &laquo;Все права защищены&raquo;</h6>
+        </div>
+    </div>
+</body>
+
+</html>
