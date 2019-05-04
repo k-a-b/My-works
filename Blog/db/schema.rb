@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_192904) do
+ActiveRecord::Schema.define(version: 2018_10_04_183554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,14 +18,12 @@ ActiveRecord::Schema.define(version: 2018_10_30_192904) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
-    t.bigint "message_id"
     t.boolean "visible", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "commentable_type"
     t.bigint "commentable_id"
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
-    t.index ["message_id"], name: "index_comments_on_message_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -48,19 +46,10 @@ ActiveRecord::Schema.define(version: 2018_10_30_192904) do
     t.boolean "banned", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet "current_sign_in_ip"
-    t.inet "last_sign_in_ip"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
-  add_foreign_key "comments", "messages"
+  add_foreign_key "comments", "users"
   add_foreign_key "messages", "users"
 end
