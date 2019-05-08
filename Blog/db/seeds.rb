@@ -8,10 +8,10 @@ User.destroy_all
 
 
 hash_users = 10.times.map do 
-	{
-		name: FFaker::Internet.user_name[0...9],
-		email: FFaker::Internet.safe_email,
-	}
+{
+	name: FFaker::Internet.user_name[0...9],
+	email: FFaker::Internet.safe_email,
+}
 end
 
 users = User.create! hash_users

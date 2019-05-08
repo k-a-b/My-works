@@ -2,30 +2,30 @@ doctype html
 html
   head
     title
-      | Four
+      | My first site
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-.box 
+.box
 
- .header  
- 
+ .header
+
   ul
    li
     =link_to 'Main', main_path
 
-   li        
-    =link_to 'Users', users_path 
-    
+   li
+    =link_to 'Users', users_path
+
    li
     =link_to 'Messages', messages_path
 
  .body
 
     = yield
-   
+
     br
-  
+
  .footer
    p Создано лично в 2018 году
