@@ -16,13 +16,11 @@ body{margin: 0;
 	height: 10vh;
 	background-color: #FCCC3A;
 	font-size: 18px
-	
 }
 
 .body{
 	background-color: #B0E0E6;
 	height: calc(85vh - 20px);
-	
 }
 
 .footer{
@@ -33,7 +31,6 @@ body{margin: 0;
 
 ul{
 	position: absolute;
-	transform: translate(0;-50%);
 }
 
 li{
