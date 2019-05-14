@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, except: [:index, :show]
 
   # GET /messages
   # GET /messages.json
@@ -8,7 +9,7 @@ class MessagesController < ApplicationController
     end
 
   # GET /messages/1
-  # GET /messages/1.json 
+  # GET /messages/1.json
   def show
     @comments = @message.comments.order(:created_at).page(params[:page]).per(2)
   end

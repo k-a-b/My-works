@@ -23,6 +23,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara-webkit', github: 'thoughtbot/capybara-webkit', branch: 'master'
   gem 'database_cleaner'
+  gem 'bcrypt-ruby'
 end
 
 group :development do
