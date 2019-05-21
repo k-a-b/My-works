@@ -5,13 +5,13 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.includes(:user).page(params[:page]).per(5)
+    @messages = Message.includes(:user).page(params[:page]).per(6)
     end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
-    @comments = @message.comments.order(:created_at).page(params[:page]).per(2)
+    @comments = @message.comments.order(:created_at).page(params[:page]).per(10)
   end
 
   # GET /messages/new
