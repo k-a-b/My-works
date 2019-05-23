@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
-    @comments = @message.comments.order(:created_at).page(params[:page]).per(10)
+    @comments = @message.comments.order(:created_at).page(params[:page]).per(5)
   end
 
   # GET /messages/new
