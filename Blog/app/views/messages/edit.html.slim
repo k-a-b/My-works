@@ -1,8 +1,10 @@
-h1 Editing message
+.edit
+  h1 Editing message
 
-== render 'form'
+  == render 'form'
+  br
 
-=> link_to 'Show', @message
-'|
-=< link_to 'Back', messages_path
-
+  <nav class="blog-pagination">
+    <a class="btn btn-outline-dark" href="#{message_path}">Show</a>
+    <a class="btn btn-outline-dark" href="#{messages_path}">Back to messages</a>
+  </nav>
