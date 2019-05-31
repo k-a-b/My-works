@@ -1,27 +1,23 @@
 = form_for @user do |f|
   - if @user.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      h5 = "You have #{pluralize(@user.errors.count, "error")}, user info not updated:"
       ul
         - @user.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :moderator
-    = f.check_box :moderator
-  .field
-    = f.label :creator
-    = f.check_box :creator
-  .field
-    = f.label :banned
-    = f.check_box :banned
-  .field
-    = f.label :created_at
-    = f.datetime_select :created_at
-  .actions = f.submit
+  = f.label :name
+  = f.text_field :name, class: 'form-control'
+  br
+  = f.label :email
+  = f.text_field :email, class: 'form-control'
+  br
+  = f.check_box :moderator, class: 'form-check form-check-inline'
+  = f.label :moderator
+  br
+  = f.check_box :banned, class: 'form-check form-check-inline'
+  = f.label :banned
+  br
+  = f.label :password
+  = f.password_field :password, class: 'form-control'
+  br
+  = f.submit

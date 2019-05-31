@@ -6,8 +6,7 @@ Comment.destroy_all
 Message.destroy_all
 User.destroy_all
 
-
-hash_users = 10.times.map do 
+hash_users = 10.times.map do
 {
 	name: FFaker::Internet.user_name[0...9],
 	email: FFaker::Internet.safe_email,
@@ -15,14 +14,11 @@ hash_users = 10.times.map do
 end
 
 users = User.create! hash_users
-users.first(4).each {|u| u.update creator: true}
-users.first(2).each {|u| u.update moderator: true}
-creators = User.where( creator: true)
+users.first {|u| u.update moderator: true}
 
-
-hash_messages =  15.times.map do
+hash_messages =  50.times.map do
 {
-	content: FFaker::HipsterIpsum.paragraph,
+	content: FFaker::HipsterIpsum.paragraph[1...240],
 	title: FFaker::HipsterIpsum.paragraph[10...35],
 	user: creators.sample
 }
@@ -33,9 +29,9 @@ messages = Message.create! hash_messages
 hash_comments = 105.times.map do
 	commentable = ((rand(2) == 1) ? messages : users).sample
 {
-	content: FFaker::HipsterIpsum.paragraphs[1...140],
+	content: FFaker::HipsterIpsum.paragraphs[1...80],
 	user: users.sample,
-	commentable_id: commentable.id, 
+	commentable_id: commentable.id,
 	commentable_type: commentable.class.to_s
 }
 end

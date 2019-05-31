@@ -5,13 +5,13 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.includes(:user).page(params[:page]).per(5)
+    @messages = Message.includes(:user).page(params[:page]).per(6)
     end
 
   # GET /messages/1
   # GET /messages/1.json
   def show
-    @comments = @message.comments.order(:created_at).page(params[:page]).per(2)
+    @comments = @message.comments.order(:created_at).page(params[:page]).per(5)
   end
 
   # GET /messages/new
@@ -71,6 +71,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:title, :content, :user_id, :visible)
+      params.require(:message).permit(:title, :content, :user_id)
     end
 end

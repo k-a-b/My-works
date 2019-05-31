@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :new
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:index, :show, :new]
+  before_action :authorize, only: [:update, :edit, :destroy]
 
   # GET /users
   # GET /users.json
