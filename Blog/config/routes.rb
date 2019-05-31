@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :sessions
   root 'main#index'
   get 'log_in', to: 'sessions#new'
+  post 'log_in', to: 'sessions#create'
   get 'log_out', to: 'sessions#destroy'
   get 'sing_up', to: 'users#new'
   get 'main', to: 'main#index'

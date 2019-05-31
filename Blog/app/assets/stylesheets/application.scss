@@ -1,6 +1,7 @@
 @import "users";
 @import "messages";
 @import "bootstrap";
+@import "session";
 
 .header{
 	background-color: black;
@@ -9,11 +10,7 @@
 
 .body {
 	padding: 0px;
-	/*width: 80%;*/
 	margin: 0 auto;
-  /*font-size: 20px;*/
-  /*color: #212529;*/
-  /*font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
 }
 
 p {
@@ -384,29 +381,3 @@ form .form-group:first-child .floating-label-form-group {
   margin: 2px;
   text-align: center;
 }
-
-// .btn {
-//   font-size: 14px;
-//   font-weight: 800;
-//   padding: 15px 25px;
-//   letter-spacing: 1px;
-//   text-transform: uppercase;
-//   border-radius: 0;
-//   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-// }
-
-// .btn-primary {
-//   background-color: #0085A1;
-//   border-color: #0085A1;
-// }
-
-// .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-//   color: #fff;
-//   background-color: #00657b !important;
-//   border-color: #00657b !important;
-// }
-
-// .btn-lg {
-//   font-size: 16px;
-//   padding: 25px 35px;
-// }
