@@ -10,6 +10,7 @@ hash_users = 10.times.map do
 {
 	name: FFaker::Internet.user_name[0...9],
 	email: FFaker::Internet.safe_email,
+	password: 'test'
 }
 end
 
@@ -20,7 +21,7 @@ hash_messages =  50.times.map do
 {
 	content: FFaker::HipsterIpsum.paragraph[1...240],
 	title: FFaker::HipsterIpsum.paragraph[10...35],
-	user: creators.sample
+	user: users.sample
 }
 end
 messages = Message.create! hash_messages

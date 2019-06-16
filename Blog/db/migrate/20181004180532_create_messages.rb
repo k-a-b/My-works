@@ -4,7 +4,6 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.string :title, index: {unique: true}
       t.text :content
       t.references :user, foreign_key: true
-      t.boolean :visible, deault: false
 
       t.timestamps
     end
